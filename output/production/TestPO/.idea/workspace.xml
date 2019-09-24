@@ -4,47 +4,15 @@
     <list default="true" id="0744911f-8559-476f-b22c-205ca403ca73" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/lab/FunctionSystemEightTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/lab/FunctionSystemFiveTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/lab/FunctionSystemFourTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/lab/FunctionSystemOneTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/lab/FunctionSystemSevenTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/lab/FunctionSystemSixTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/lab/FunctionSystemThreeTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/lab/FunctionSystemTwoTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/lab/TestUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/lab/logarithmic/Ln.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/lab/logarithmic/Log10.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/lab/logarithmic/Log2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/lab/logarithmic/LogFunction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/lab/logarithmic/LogN.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/lab/trigonometric/Cosinus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/lab/trigonometric/Cotangent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/lab/trigonometric/Secant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/lab/trigonometric/Tangent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/lab/trigonometric/TrigFunction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/lab/util/BigDecimalSqrt.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/lab/util/CSVWriter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/lab/util/FactorialSeries.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/TestPO.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TestPO.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Engine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Atom.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/IParticle.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/IPerson.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Molecule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Person.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RBTree/BST.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RBTree/RBTree.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RBTree/RedBlackBST.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RBTree/StdOut.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RBTree/StdRandom.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Sinus.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Spaceship.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/DomenModelTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/IPerson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IPerson.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Spaceship.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Spaceship.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/DomenModelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/DomenModelTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/RBTreeTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/SinusTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/TestRedBlackBST.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/TestRedBlackBST.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestRedBlackBST.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -63,9 +31,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1QgLfZmN7iMwfSPRJRsSEiuIweK" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.Annotations" value="false" />
@@ -74,7 +40,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test/java/lab/util" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -88,24 +54,17 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\TestPO2\src\test\java\lab" />
-      <recent name="D:\TestPO\test" />
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\TestPO\src" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="lab.trigonometric" />
-      <recent name="lab.logarithmic" />
       <recent name="src" />
       <recent name="src.RBTree" />
       <recent name="" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\TestPO2\src\test\java\lab\util" />
-      <recent name="D:\TestPO2\src\test\java\lab\trigonometric" />
-      <recent name="D:\TestPO2\src\test\java\lab\logarithmic" />
-      <recent name="D:\TestPO2\src\test\java\lab" />
-      <recent name="D:\TestPO2\src\test" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\TestPO\test" />
+      <recent name="D:\TestPO\src" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -218,7 +177,6 @@
       <workItem from="1568187398700" duration="4276000" />
       <workItem from="1568191729611" duration="3543000" />
       <workItem from="1568271856970" duration="157000" />
-      <workItem from="1569341910656" duration="1302000" />
     </task>
     <servers />
   </component>
