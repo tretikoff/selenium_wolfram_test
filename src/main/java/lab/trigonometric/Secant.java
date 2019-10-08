@@ -2,18 +2,11 @@ package lab.trigonometric;
 
 import lab.AbstractFunction;
 import lab.Functions;
-import lab.util.BigDecimalSqrt;
 
-import java.math.BigDecimal;
-import java.math.MathContext;
-import java.math.RoundingMode;
-
-import static java.lang.Double.NaN;
-import static java.lang.Double.POSITIVE_INFINITY;
 import static java.lang.Math.PI;
 
 
-public class Secant extends AbstractFunction{
+public class Secant extends AbstractFunction {
     {
 //        table.put(-PI, -1.0000001352604628);
         table.put(-PI, -1.0);
@@ -25,69 +18,39 @@ public class Secant extends AbstractFunction{
 
         table.put(3 * PI / 4, -1.41421356375);
         table.put(-3 * PI / 4, -1.41421356375);
-        table.put( PI / 4, 1.41421356375);
+        table.put(PI / 4, 1.41421356375);
         table.put(-PI / 4, 1.41421356375);
         function = Functions.SECANT;
     }
 
-    Cosinus cos;
+    Cosinus cosinus;
 
     public Secant(double precision) {
         super(precision);
-        cos = new Cosinus(precision);
+        cosinus = new Cosinus(precision);
     }
 
     @Override
-    public void setPrecision(double precision){
+    public void setPrecision(double precision) {
         super.setPrecision(precision);
-        cos.setPrecision(precision);
+        cosinus.setPrecision(precision);
     }
 
     @Override
     protected double calculate(double arg) {
-        /*
-        if (Math.abs(arg - Math.PI) < DELTA ) {
-            return 0d;
-        } else if (Math.abs(arg + Math.PI) < DELTA ) {
-            return 0d;
-        } else if (Math.abs(arg) < DELTA ) {
-            return 0d;
+        double cos = cosinus.calculate(arg);
+        if (Math.abs(cos) < DELTA) {
+            return cos > 0 ? Double.POSITIVE_INFINITY : Double.NEGATIVE_INFINITY;
         }
-        */
-        if (Math.abs(arg - Math.PI/2) < DELTA) {
-            return POSITIVE_INFINITY;
-        }
-        if (Math.abs(arg + Math.PI/2) < DELTA) {
-            return POSITIVE_INFINITY;
-        }
-//        if (Math.abs(arg - 2*Math.PI) < DELTA) {
-//            return 0d;
-//        }
-//        if (Math.abs(arg + 2*Math.PI) < DELTA) {
-//            return 0d;
-//        }
-//        if (Math.abs(arg - 3*Math.PI/2) < DELTA) {
-//            return POSITIVE_INFINITY;
-//        }
-//        if (Math.abs(arg + 3*Math.PI/2) < DELTA) {
-//            return POSITIVE_INFINITY;
-//        }
-        if( Double.isNaN(arg) || Double.isInfinite(arg) ){
-            return NaN;
-        }
-        int scale = 10;
-        BigDecimal last;
-        BigDecimal value = new BigDecimal(0d, MathContext.UNLIMITED);
-        int n = scale;
+        return 1 / cos;
+    }
 
-        double cosVal = cos.calc(arg);
-        do {
-            last = value;
-            value = new BigDecimal(1d, MathContext.UNLIMITED)
-                    .divide(new BigDecimal(cosVal, MathContext.UNLIMITED), n, RoundingMode.HALF_UP);
-            n++;
-        } while (getPrecision() <= value.subtract(last).abs().doubleValue() && n < MAX_ITERATIONS);
-        return value.setScale(n, RoundingMode.UP).doubleValue();
-//        return 1 / cos.calc(arg);
+    @Override
+    protected double calculateStub(double arg) {
+        double cos = Math.cos(arg);
+        if (Math.abs(cos) < DELTA) {
+            return cos > 0 ? Double.POSITIVE_INFINITY : Double.NEGATIVE_INFINITY;
+        }
+        return 1 / cos;
     }
 }

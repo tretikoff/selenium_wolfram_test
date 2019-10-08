@@ -13,9 +13,13 @@ public class LogFunction extends AbstractFunction {
     Log10 log10;
 
     {
-        table.put(0.01, 13415.174712659141193380552762282820809173835833788105);
+        table.put(0.01, 13162.313221);
         table.put(0.99, 0.000000000000161045);
         table.put(1.01, 1.51666137239966e-13);
+        table.put(5.0, 0.7104214239689);
+        table.put(10.0, 0.0);
+        table.put(15.0, 9.0500252167076474149);
+
         function = Functions.LOG_FN;
     }
 
@@ -30,9 +34,6 @@ public class LogFunction extends AbstractFunction {
     @Override
     public void setPrecision(double precision) {
         super.setPrecision(precision);
-        ln.setPrecision(precision);
-        log3.setPrecision(precision);
-        log10.setPrecision(precision);
     }
 
     @Override
@@ -42,10 +43,6 @@ public class LogFunction extends AbstractFunction {
 
     @Override
     protected double calculateStub(double x) {
-        return Math.pow((((Math.pow(Math.log10(x), 3) - Math.log10(x)) * Math.log(x)) * StubLog3(x)), 2);
-    }
-
-    private Double StubLog3(double a) {
-        return Math.log(a) / Math.log(3);
+        return Math.pow((((Math.pow(Math.log10(x), 3) - Math.log10(x)) * Math.log(x)) * log3.calculateStub(x)), 2);
     }
 }

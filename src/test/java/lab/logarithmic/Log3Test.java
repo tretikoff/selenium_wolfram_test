@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import static lab.AbstractFunction.DELTA;
 
-public class Log2Test {
+public class Log3Test {
     private final double base = 2;
     private double precision = DELTA;
     private TestUtil util = new TestUtil(new Log3(precision));
@@ -40,11 +40,6 @@ public class Log2Test {
     @Test
     public void zero() {
         util.doCheck(0.0, precision);
-    }
-
-    @Test
-    public void gtZero() {
-        util.doCheck(0.01, precision);
     }
 
     @Test

@@ -79,4 +79,9 @@ public class Cosinus extends AbstractFunction{
             arg -= periodCounter * 2 * PI;
         return arg;
     }
+
+    @Override
+    protected double calculateStub(double arg) {
+        return Math.cos(arg);
+    }
 }

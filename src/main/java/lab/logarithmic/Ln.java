@@ -65,4 +65,9 @@ public class Ln extends AbstractFunction {
 
         return value;
     }
+
+    @Override
+    protected double calculateStub(double arg) {
+        return Math.log(arg);
+    }
 }

@@ -30,4 +30,9 @@ public class Log10 extends LogN {
     protected double calculate(double arg) {
         return log(arg, BASE);
     }
+
+    @Override
+    protected double calculateStub(double arg) {
+        return Math.log10(arg);
+    }
 }

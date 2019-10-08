@@ -23,64 +23,39 @@ public class Cotangent extends AbstractFunction {
 
         table.put(3 * PI / 4, -1.0);
         table.put(-3 * PI / 4, 1.0);
-        table.put( PI / 4, 1.0);
+        table.put(PI / 4, 1.0);
         table.put(-PI / 4, -1.0);
         function = Functions.COTANGENT;
     }
 
-    Tangent tan;
+    private Tangent tangent;
 
     public Cotangent(double precision) {
         super(precision);
-        tan = new Tangent(precision);
+        tangent = new Tangent(precision);
     }
 
     @Override
-    public void setPrecision(double precision){
+    public void setPrecision(double precision) {
         super.setPrecision(precision);
-        tan.setPrecision(precision);
+        tangent.setPrecision(precision);
     }
 
     @Override
     protected double calculate(double arg) {
-        if (Math.abs(arg - Math.PI) < DELTA ) {
-            return Double.POSITIVE_INFINITY;
-        } else if (Math.abs(arg + Math.PI) < DELTA ) {
-            return Double.POSITIVE_INFINITY;
-        } else if (Math.abs(arg) < DELTA ) {
-            return Double.POSITIVE_INFINITY;
-        } else if (Math.abs(arg - Math.PI/2) < DELTA) {
-            return 0d;
-        } else if (Math.abs(arg + Math.PI/2) < DELTA) {
-            return 0d;
-        } else if (Math.abs(arg - 2*Math.PI) < DELTA) {
-            return Double.POSITIVE_INFINITY;
-        } else if (Math.abs(arg + 2*Math.PI) < DELTA) {
-            return Double.POSITIVE_INFINITY;
-        } else if (Math.abs(arg - 3*Math.PI/2) < DELTA) {
-            return 0d;
-        } else if (Math.abs(arg + 3*Math.PI/2) < DELTA) {
-            return 0d;
+        double tan = tangent.calculate(arg);
+        if (Math.abs(tan) < DELTA) {
+            return tan > 0 ? Double.POSITIVE_INFINITY : Double.NEGATIVE_INFINITY;
         }
-        if( isInfinite(arg) || isNaN(arg) ){
-            return NaN;
-        }
-        int scale = 10;
-        BigDecimal last;
-        BigDecimal value = new BigDecimal(0d, MathContext.UNLIMITED);
-        int n = scale;
+        return 1 / tan;
+    }
 
-        double tanVal = tan.calc(arg);
-        if( Math.abs(tanVal) < DELTA || isInfinite(tanVal) || isNaN(tanVal) ){
-            return NaN;
+    @Override
+    protected double calculateStub(double arg) {
+        double tan = Math.tan(arg);
+        if (Math.abs(tan) < DELTA) {
+            return tan > 0 ? Double.POSITIVE_INFINITY : Double.NEGATIVE_INFINITY;
         }
-        do {
-            last = value;
-            value = new BigDecimal(1d, MathContext.UNLIMITED)
-                    .divide(new BigDecimal(tanVal, MathContext.UNLIMITED), n, RoundingMode.HALF_UP);
-            n++;
-        } while (getPrecision() <= value.subtract(last).abs().doubleValue() && n < MAX_ITERATIONS);
-        return value.setScale(n, RoundingMode.UP).doubleValue();
-//        return 1 / tan.calc(arg);
+        return 1 / tan;
     }
 }

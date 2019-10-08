@@ -6,8 +6,8 @@ public abstract class AbstractFunction implements Calculation {
 
     private static final double DEFAULT_PRECISION = 0.000001;
     public static final double DELTA = 1e-4;
-    public static final int MAX_ITERATIONS = 1_000_000;
-    public final Boolean DEFAULT_IS_STUB = true;
+    protected static final int MAX_ITERATIONS = 1_000_000;
+    private final Boolean DEFAULT_IS_STUB = false;
 
     private static Map<Functions, Boolean> funcIsStub = new HashMap<>();
     protected Functions function;
@@ -35,7 +35,7 @@ public abstract class AbstractFunction implements Calculation {
         if((isStub = funcIsStub.get(function)) == null) {
             isStub = DEFAULT_IS_STUB;
         }
-        if(isStub.booleanValue()){
+        if(isStub){
             return stub(arg);
         } else {
             return calculate(arg);
@@ -53,17 +53,18 @@ public abstract class AbstractFunction implements Calculation {
         this.funcIsStub.put(function, funcIsStub);
     }
 
-    protected double stub(double arg) {
+    private double stub(double arg) {
         Double result;
 
         if((result = table.get(arg)) != null)
-            return result.doubleValue();
+            return result;
         else
             return calculateStub(arg);
     }
 
-    protected abstract double calculate(double arg);
     protected double calculateStub(double arg) {
         throw new UnsupportedOperationException();
     }
+
+    protected abstract double calculate(double arg);
 }

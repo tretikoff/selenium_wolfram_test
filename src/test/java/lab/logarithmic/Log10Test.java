@@ -19,18 +19,8 @@ public class Log10Test {
     }
 
     @Test
-    public void negativeInfinity() {
-        util.doCheck(Double.NEGATIVE_INFINITY, precision);
-    }
-
-    @Test
     public void positiveInfinity() {
         util.doCheck(Double.POSITIVE_INFINITY, precision);
-    }
-
-    @Test
-    public void nan() {
-        util.doCheck(Double.NaN, precision);
     }
 
     @Test

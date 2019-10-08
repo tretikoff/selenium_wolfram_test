@@ -22,11 +22,6 @@ public class LnTest {
     }
 
     @Test
-    public void nan() {
-        util.doCheck(Double.NaN, precision);
-    }
-
-    @Test
     public void ltZero() {
         util.doCheck(-0.01, precision);
     }

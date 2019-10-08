@@ -5,12 +5,14 @@ import lab.AbstractFunction;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Locale;
+
 public class CSVWriter {
     public void setAppend(boolean append) {
         this.append = append;
     }
 
     boolean append = false;
+
     public AbstractFunction getFunction() {
         return function;
     }
@@ -23,15 +25,16 @@ public class CSVWriter {
     public static final String SEPARATOR = ",";
 
 
-    public CSVWriter(AbstractFunction function){
+    public CSVWriter(AbstractFunction function) {
         this.function = function;
     }
 
-    public void write(double from, double to, double step){
+    public void write(double from, double to, double step) {
         function.setFuncIsStub(false);
         try (FileWriter writer = new FileWriter(getFilename(), append)) {
             for (double x = from; x < to; x += step) {
                 double value = function.calc(x);
+                if (Double.isNaN(value)) continue;
                 writer.append(String.format(Locale.US, "%f%s%f\n", x, SEPARATOR, value));
             }
 
@@ -40,9 +43,9 @@ public class CSVWriter {
         }
     }
 
-    public String getFilename(){
+    public String getFilename() {
         String fnName = this.function.getClass().getSimpleName();
-        if( fnName.isEmpty() ){
+        if (fnName.isEmpty()) {
             fnName = "fn";
         }
         return fnName + "-data.csv";
