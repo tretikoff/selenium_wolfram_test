@@ -3,6 +3,7 @@ package lab.trigonometric;
 import lab.AbstractFunction;
 import lab.Functions;
 
+import static java.lang.Double.NaN;
 import static java.lang.Math.PI;
 
 
@@ -40,7 +41,7 @@ public class Secant extends AbstractFunction {
     protected double calculate(double arg) {
         double cos = cosinus.calculate(arg);
         if (Math.abs(cos) < DELTA) {
-            return cos > 0 ? Double.POSITIVE_INFINITY : Double.NEGATIVE_INFINITY;
+            return NaN;
         }
         return 1 / cos;
     }
@@ -49,7 +50,7 @@ public class Secant extends AbstractFunction {
     protected double calculateStub(double arg) {
         double cos = Math.cos(arg);
         if (Math.abs(cos) < DELTA) {
-            return cos > 0 ? Double.POSITIVE_INFINITY : Double.NEGATIVE_INFINITY;
+            return NaN;
         }
         return 1 / cos;
     }

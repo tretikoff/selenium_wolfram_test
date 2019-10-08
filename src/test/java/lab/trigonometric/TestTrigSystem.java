@@ -29,7 +29,7 @@ public class TestTrigSystem {
 
     @Test
     public void TestFunction() {
-        util.checkRange(-2 * PI + 0.1, 2 * PI, PI / 48);
+        util.checkRange(-2 * PI, 2 * PI, PI / 48);
         writer.write(-2 * PI, 2 * PI, PI / 48);
     }
 }

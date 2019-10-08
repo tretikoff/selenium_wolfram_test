@@ -34,7 +34,7 @@ public class Cosecant extends AbstractFunction {
     protected double calculate(double arg) {
         double sin = sinus.calculate(arg);
         if (Math.abs(sin) < DELTA) {
-            return sin > 0 ? Double.POSITIVE_INFINITY : Double.NEGATIVE_INFINITY;
+            return NaN;
         }
         return 1 / sin;
     }
@@ -43,7 +43,7 @@ public class Cosecant extends AbstractFunction {
     protected double calculateStub(double arg) {
         double sin = Math.sin(arg);
         if (Math.abs(sin) < DELTA) {
-            return sin > 0 ? Double.POSITIVE_INFINITY : Double.NEGATIVE_INFINITY;
+            return NaN;
         }
         return 1 / sin;
     }

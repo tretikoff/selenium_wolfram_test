@@ -58,7 +58,7 @@ public class Tangent extends AbstractFunction {
         double cos = cosinus.calculate(arg);
         double sin = sinus.calculate(arg);
         if (Math.abs(cos) < DELTA) {
-            return cos > 0 ? Double.POSITIVE_INFINITY : Double.NEGATIVE_INFINITY;
+            return NaN;
         }
         return sin / cos;
     }

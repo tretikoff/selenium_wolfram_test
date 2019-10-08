@@ -45,7 +45,7 @@ public class Cotangent extends AbstractFunction {
     protected double calculate(double arg) {
         double tan = tangent.calculate(arg);
         if (Math.abs(tan) < DELTA) {
-            return tan > 0 ? Double.POSITIVE_INFINITY : Double.NEGATIVE_INFINITY;
+            return Double.NaN;
         }
         return 1 / tan;
     }
@@ -54,7 +54,7 @@ public class Cotangent extends AbstractFunction {
     protected double calculateStub(double arg) {
         double tan = Math.tan(arg);
         if (Math.abs(tan) < DELTA) {
-            return tan > 0 ? Double.POSITIVE_INFINITY : Double.NEGATIVE_INFINITY;
+            return Double.NaN;
         }
         return 1 / tan;
     }
