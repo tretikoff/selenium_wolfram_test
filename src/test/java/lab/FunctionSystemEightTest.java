@@ -2,18 +2,15 @@ package lab;
 
 import lab.logarithmic.Ln;
 import lab.logarithmic.Log10;
-import lab.logarithmic.Log2;
+import lab.logarithmic.Log3;
 import lab.trigonometric.*;
 import lab.util.CSVWriter;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
+import static java.lang.Math.PI;
 import static lab.AbstractFunction.DELTA;
-
-/**
- * Created by ivan on 08.04.17.
- */
 public class FunctionSystemEightTest {
     private double precision = DELTA;
     private TestUtil util = new TestUtil(new FunctionSystem(precision));
@@ -33,7 +30,7 @@ public class FunctionSystemEightTest {
 
         Ln ln = new Ln(DELTA);
         ln.setFuncIsStub(false);
-        Log2 log2 = new Log2(DELTA);
+        Log3 log2 = new Log3(DELTA);
         log2.setFuncIsStub(false);
         Log10 log10 = new Log10(DELTA);
         log10.setFuncIsStub(false);
@@ -88,19 +85,19 @@ public class FunctionSystemEightTest {
     @Ignore
     public void save(){
         CSVWriter w = new CSVWriter(new FunctionSystem(1e-3));
-//        w.write(0, 10, DELTA);
-//        w.setAppend(true);
-//        w.getFunction().setPrecision(DELTA);
-//        w.write(-6.0, -3.2, 1e-3);
-//        w.setAppend(true);
+        w.write(0, 10, DELTA);
+        w.setAppend(true);
+        w.getFunction().setPrecision(DELTA);
+        w.write(-6.0, -3.2, 1e-3);
+        w.setAppend(true);
 
-//        w.write(-4.0, -PI, 1e-3);
+        w.write(-4.0, -PI, 1e-3);
 
-//        w.write(-3.2, -2.0, 1e-3);
-//        w.setAppend(true);
+        w.write(-3.2, -2.0, 1e-3);
+        w.setAppend(true);
 
-//        w.write(-2.0, -1.0, 1e-3);
+        w.write(-2.0, -1.0, 1e-3);
 
-//        w.write(-1.0, 0.0, 1e-3);
+        w.write(-1.0, 0.0, 1e-3);
     }
 }

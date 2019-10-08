@@ -1,10 +1,6 @@
 package lab;
 
 import static org.junit.Assert.assertEquals;
-
-/**
- * Created by ivan on 08.04.17.
- */
 public class TestUtil {
     private AbstractFunction fn;
     private String ERROR_FMT = "expected %f == %f +- %f from %s(%f)\n";

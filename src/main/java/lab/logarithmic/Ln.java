@@ -7,9 +7,7 @@ import java.util.Map;
 
 import static java.lang.Double.*;
 
-/**
- * Created by ivan on 07.04.17.
- */
+
 public class Ln extends AbstractFunction {
 
     {

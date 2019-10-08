@@ -1,68 +1,67 @@
 package lab.logarithmic;
 
-import lab.AbstractFunction;
-import lab.Functions;
+import lab.TestUtil;
+import org.junit.Before;
+import org.junit.Test;
 
-import static java.lang.Double.*;
+import static lab.AbstractFunction.DELTA;
 
-/**
- * Created by ivan on 07.04.17.
- */
-public class Ln extends AbstractFunction {
+public class FunctionTest {
+    private double precision = DELTA;
+    private TestUtil util = new TestUtil(new LogFunction(precision));
 
-    {
-        table.put(Double.POSITIVE_INFINITY, Double.POSITIVE_INFINITY);
-        table.put(Math.E - 0.01, 0.996314422);
-        table.put(Math.E, 1.0);
-        table.put(Math.E + 0.01, 1.003672044);
-
-        table.put(0.0 - 0.01, Double.NaN);
-        table.put(0.0, Double.NEGATIVE_INFINITY);
-        table.put(0.0 + 0.01, -4.597299250490899);
-
-        table.put(1.0 - 0.01, -0.010050000000000009);
-        table.put(1.0, 0.0);
-        table.put(1.0 + 0.01, 0.00995000000000001);
-        function = Functions.LN;
+    @Before
+    public void setUp(){
+        Ln ln = new Ln(DELTA);
+        ln.setFuncIsStub(false);
+        Log3 log2 = new Log3(DELTA);
+        log2.setFuncIsStub(false);
+        Log10 log10 = new Log10(DELTA);
+        log10.setFuncIsStub(false);
     }
 
-    public Ln(double precision) {
-        super(precision);
+    @Test
+    public void negativeInfinity(){
+        util.doCheck(Double.NEGATIVE_INFINITY, precision);
     }
 
-    @Override
-    protected double calculate(double arg) {
-        if (isNaN(arg) || arg < 0.0) {
-            return NaN;
-        }
+    @Test
+    public void positiveInfinity(){
+        util.doCheck(Double.POSITIVE_INFINITY, precision);
+    }
 
-        if (arg == POSITIVE_INFINITY) {
-            return POSITIVE_INFINITY;
-        }
+    @Test
+    public void nan(){
+        util.doCheck(Double.NaN, precision);
+    }
 
-        if (arg == 0.0) {
-            return NEGATIVE_INFINITY;
-        }
+    @Test
+    public void ltZero() {
+        util.doCheck(-0.01, precision);
+    }
 
-        double value = 0;
-        double prevValue;
-        int n = 1;
-        int k = 1;
-        if (Math.abs(arg - 1) <= 1) {
-            do {
-                prevValue = value;
-                value -= ((Math.pow(-1, n) * Math.pow(arg - 1, n)) / n);
-                n++;
-            } while (getPrecision() <= Math.abs(value - prevValue) && n < MAX_ITERATIONS);
-        } else {
-            do {
-                prevValue = value;
-                value -= ((Math.pow(-1, k) * Math.pow(arg - 1, -k)) / k);
-                k++;
-            } while (getPrecision() <= Math.abs(value - prevValue) && k < MAX_ITERATIONS);
-            value += calc(arg - 1);
-        }
+    @Test
+    public void zero() {
+        util.doCheck(0.0, precision);
+    }
 
-        return value;
+    @Test
+    public void gtZero() {
+        util.doCheck(0.01, precision);
+    }
+
+    @Test
+    public void ltOne() {
+        util.doCheck(1 - 0.01, precision);
+    }
+
+    @Test
+    public void one() {
+        util.doCheck(1.0, precision);
+    }
+
+    @Test
+    public void gtOne() {
+        util.doCheck(1.0 + 0.01, precision);
     }
 }

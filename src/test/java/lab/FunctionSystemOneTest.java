@@ -1,9 +1,5 @@
 package lab;
 
-import lab.logarithmic.Ln;
-import lab.logarithmic.Log10;
-import lab.logarithmic.Log2;
-import lab.logarithmic.LogFunction;
 import lab.trigonometric.*;
 import lab.util.CSVWriter;
 import org.junit.Before;
@@ -11,10 +7,6 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import static lab.AbstractFunction.DELTA;
-
-/**
- * Created by ivan on 08.04.17.
- */
 public class FunctionSystemOneTest {
     private double precision = DELTA;
     private TestUtil util = new TestUtil(new FunctionSystem(precision));
@@ -74,19 +66,19 @@ public class FunctionSystemOneTest {
     @Ignore
     public void save(){
         CSVWriter w = new CSVWriter(new FunctionSystem(1e-3));
-//        w.write(0, 10, DELTA);
-//        w.setAppend(true);
-//        w.getFunction().setPrecision(DELTA);
-//        w.write(-6.0, -3.2, 1e-3);
-//        w.setAppend(true);
+        w.write(0, 10, DELTA);
+        w.setAppend(true);
+        w.getFunction().setPrecision(DELTA);
+        w.write(-6.0, -3.2, 1e-3);
+        w.setAppend(true);
 
-//        w.write(-4.0, -PI, 1e-3);
+        w.write(-4.0, -Math.PI, 1e-3);
 
-//        w.write(-3.2, -2.0, 1e-3);
-//        w.setAppend(true);
+        w.write(-3.2, -2.0, 1e-3);
+        w.setAppend(true);
 
-//        w.write(-2.0, -1.0, 1e-3);
+        w.write(-2.0, -1.0, 1e-3);
 
-//        w.write(-1.0, 0.0, 1e-3);
+        w.write(-1.0, 0.0, 1e-3);
     }
 }

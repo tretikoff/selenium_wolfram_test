@@ -12,9 +12,7 @@ import static java.lang.Double.isNaN;
 import static java.lang.Float.NaN;
 import static java.lang.Math.PI;
 
-/**
- * Created by ivan on 07.04.17.
- */
+
 public class Cotangent extends AbstractFunction {
     {
         table.put(-PI, Double.POSITIVE_INFINITY);

@@ -5,9 +5,7 @@ import lab.Functions;
 
 import static java.lang.Double.*;
 
-/**
- * Created by daituganov on 08.04.17.
- */
+
 public class LogN extends AbstractFunction {
 
     private boolean isStub = true;

@@ -1,19 +1,12 @@
 package lab;
 
-import lab.trigonometric.Cosinus;
-import lab.trigonometric.Cotangent;
-import lab.trigonometric.Secant;
-import lab.trigonometric.Tangent;
+import lab.trigonometric.*;
 import lab.util.CSVWriter;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
 import static lab.AbstractFunction.DELTA;
-
-/**
- * Created by ivan on 08.04.17.
- */
 public class FunctionSystemFourTest {
     private double precision = DELTA;
     private TestUtil util = new TestUtil(new FunctionSystem(precision));

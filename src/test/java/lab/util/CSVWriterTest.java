@@ -1,24 +1,43 @@
 package lab.util;
 
-import java.math.BigDecimal;
-import java.math.MathContext;
+import lab.AbstractFunction;
+import lab.Functions;
+import org.junit.Test;
 
-public class CSWriterTest {
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.Locale;
+import java.util.stream.Stream;
 
-    private static final BigDecimal TWO = BigDecimal.valueOf(2L);
+import static org.junit.Assert.*;
+public class CSVWriterTest {
+    @Test
+    public void write() throws Exception {
+        CSVWriter w = new CSVWriter(new AbstractFunction() {
+            {
+                table.put(0.0, 0.0);
+                function = Functions.STUB;
+            }
+            @Override
+            protected double calculate(double arg) {
+                return arg;
+            }
+        });
 
-    public static BigDecimal sqrt(BigDecimal x, MathContext mc) {
-        BigDecimal g = x.divide(TWO, mc);
-        boolean done = false;
-        final int maxIterations = mc.getPrecision() + 1;
-        for (int i = 0; !done && i < maxIterations; i++) {
-            // r = (x/g + g) / 2
-            BigDecimal r = x.divide(g, mc);
-            r = r.add(g);
-            r = r.divide(TWO, mc);
-            done = r.equals(g);
-            g = r;
+        AbstractFunction f = w.getFunction();
+
+        double from = 0.0;
+        double to = 5.0;
+        double step = 0.1;
+        final double[] x = {from};
+        w.write(from, to, step);
+
+        try (Stream<String> stream = Files.lines(Paths.get(w.getFilename()))) {
+            stream.forEach((s -> {
+                assertEquals(s,String.format(Locale.US, "%f%s%f", x[0], w.SEPARATOR, f.calc(x[0])));
+                x[0] += step;
+            }));
         }
-        return g;
     }
+
 }

@@ -7,10 +7,6 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import static lab.AbstractFunction.DELTA;
-
-/**
- * Created by ivan on 08.04.17.
- */
 public class FunctionSystemFiveTest {
     private double precision = DELTA;
     private TestUtil util = new TestUtil(new FunctionSystem(precision));

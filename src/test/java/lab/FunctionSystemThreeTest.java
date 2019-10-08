@@ -1,6 +1,5 @@
 package lab;
 
-import lab.logarithmic.Ln;
 import lab.trigonometric.*;
 import lab.util.CSVWriter;
 import org.junit.Before;
@@ -8,11 +7,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import static lab.AbstractFunction.DELTA;
-
-/**
- * Created by ivan on 08.04.17.
- */
-public class FunctionSystemSixTest {
+public class FunctionSystemThreeTest {
     private double precision = DELTA;
     private TestUtil util = new TestUtil(new FunctionSystem(precision));
 
@@ -24,13 +19,6 @@ public class FunctionSystemSixTest {
         sec.setFuncIsStub(false);
         Tangent tan = new Tangent(precision);
         tan.setFuncIsStub(false);
-        Cotangent cot = new Cotangent(precision);
-        cot.setFuncIsStub(false);
-        TrigFunction tFn = new TrigFunction(precision);
-        tFn.setFuncIsStub(false);
-
-        Ln ln = new Ln(DELTA);
-        ln.setFuncIsStub(false);
     }
 
     @Test

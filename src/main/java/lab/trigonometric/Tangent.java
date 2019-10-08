@@ -14,9 +14,7 @@ import static java.lang.Math.PI;
 import static java.lang.Math.pow;
 import static java.lang.Math.sqrt;
 
-/**
- * Created by ivan on 07.04.17.
- */
+
 public class Tangent extends AbstractFunction {
 
     {

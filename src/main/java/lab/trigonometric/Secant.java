@@ -12,9 +12,7 @@ import static java.lang.Double.NaN;
 import static java.lang.Double.POSITIVE_INFINITY;
 import static java.lang.Math.PI;
 
-/**
- * Created by ivan on 07.04.17.
- */
+
 public class Secant extends AbstractFunction{
     {
 //        table.put(-PI, -1.0000001352604628);

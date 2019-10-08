@@ -5,10 +5,6 @@ import lab.AbstractFunction;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Locale;
-
-/**
- * Created by ivan on 08.04.17.
- */
 public class CSVWriter {
     public void setAppend(boolean append) {
         this.append = append;

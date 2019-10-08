@@ -1,7 +1,7 @@
 package lab;
 
 import lab.logarithmic.Ln;
-import lab.logarithmic.Log2;
+import lab.logarithmic.Log3;
 import lab.trigonometric.*;
 import lab.util.CSVWriter;
 import org.junit.Before;
@@ -9,10 +9,6 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import static lab.AbstractFunction.DELTA;
-
-/**
- * Created by ivan on 08.04.17.
- */
 public class FunctionSystemSevenTest {
     private double precision = DELTA;
     private TestUtil util = new TestUtil(new FunctionSystem(precision));
@@ -32,7 +28,7 @@ public class FunctionSystemSevenTest {
 
         Ln ln = new Ln(DELTA);
         ln.setFuncIsStub(false);
-        Log2 log2 = new Log2(DELTA);
+        Log3 log2 = new Log3(DELTA);
         log2.setFuncIsStub(false);
     }
 

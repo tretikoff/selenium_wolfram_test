@@ -11,9 +11,7 @@ import java.math.RoundingMode;
 import static java.lang.Double.*;
 import static java.lang.Math.PI;
 
-/**
- * Created by ivan on 07.04.17.
- */
+
 public class Cosinus extends AbstractFunction{
 
     {

@@ -2,9 +2,7 @@ package lab.logarithmic;
 
 import lab.Functions;
 
-/**
- * Created by daituganov on 08.04.17.
- */
+
 public class Log10 extends LogN {
     public static final int BASE = 10;
 

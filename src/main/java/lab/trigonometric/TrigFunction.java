@@ -7,10 +7,6 @@ import lab.Functions;
 import static java.lang.Double.NaN;
 import static java.lang.Math.PI;
 import static java.lang.Math.pow;
-
-/**
- * Created by ivan on 08.04.17.
- */
 public class TrigFunction extends AbstractFunction {
     private double precision;
     Cosinus cos;
@@ -74,9 +70,6 @@ public class TrigFunction extends AbstractFunction {
 
     @Override
     public double calculate(double arg) {
-//        if( Math.abs(arg) < DELTA ){
-//            return NaN;
-//        }
         double cosVal = cos.calc(arg);
         double secVal = sec.calc(arg);
         double tanVal = tan.calc(arg);
@@ -87,5 +80,10 @@ public class TrigFunction extends AbstractFunction {
             return NaN;
         }
         return ( dividend / divisor );
+    }
+
+    @Override
+    protected double calculateStub(double x) {
+        return (((((Math.cos(x) + TrigFunStub.csc(x)) * TrigFunStub.sec(x)) / TrigFunStub.csc(x)) * (Math.cos(x) * TrigFunStub.csc(x))) / ((Math.tan(x) / TrigFunStub.cot(x)) * Math.cos(x)));
     }
 }
