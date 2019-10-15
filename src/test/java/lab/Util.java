@@ -4,18 +4,16 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
-
 class Util {
+    private String baseUrl;
+
     String getBaseUrl() {
         return baseUrl;
     }
-
-    private String baseUrl;
 
     String getCorrectLogin() {
         return "pukoh@mail.ru";
@@ -36,15 +34,6 @@ class Util {
         driver.get(getBaseUrl());
     }
 
-    boolean isElementPresent(WebDriver driver, By by) {
-        try {
-            driver.findElement(by);
-            return true;
-        } catch (NoSuchElementException e) {
-            return false;
-        }
-    }
-
     void tryClick(WebDriver driver, By selector) {
         WebDriverWait wait = new WebDriverWait(driver, 10);
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(selector));
@@ -54,7 +43,7 @@ class Util {
 
     void waitPresent(WebDriver driver, By selector) {
         WebDriverWait wait = new WebDriverWait(driver, 10);
-        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(selector));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(selector));
     }
 
     String getRandomString(int length) {

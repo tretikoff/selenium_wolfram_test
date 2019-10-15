@@ -45,11 +45,16 @@ public class AuthorizationTest {
         util.tryClick(driver, By.xpath("//button[@type='submit']"));
     }
 
-    private void doLogin(WebDriver driver, String email, String password) throws InterruptedException {
+    private void doLogin(WebDriver driver, String email, String password) {
         util.tryClick(driver, By.xpath("//button[@class='_2HkkNXzH _1MOABRzM gWLqKuPt']"));
         driver.findElement(By.xpath("//input[@class='form-control'][@path='email']")).sendKeys(email);
         driver.findElement(By.xpath("//input[@class='form-control'][@path='password']")).sendKeys(password);
         util.tryClick(driver, By.xpath("//button[@type='submit']"));
+    }
+
+    private void doLogOut(WebDriver driver) {
+        driver.findElement(By.xpath("(//button[@class='_2HkkNXzH gWfHfTZi _1Dl0a26V'])[3]")).click();
+        util.tryClick(driver, By.xpath("//button[@class='_2HkkNXzH gWfHfTZi i_HuwTyc']"));
     }
 
     @Test
@@ -76,7 +81,7 @@ public class AuthorizationTest {
     }
 
     @Test
-    public void wrongPasswordLogin() throws Exception {
+    public void wrongPasswordLogin() {
         doRegister(chromeDriver, util.getCorrectLogin(), "wrong_password");
         chromeDriver.findElement(By.className("alert-danger"));
         doRegister(firefoxDriver, util.getCorrectLogin(), "wrong_password");
@@ -84,10 +89,18 @@ public class AuthorizationTest {
     }
 
     @Test
-    public void wrongEmailLogin() throws Exception {
+    public void wrongEmailLogin() {
         doLogin(chromeDriver, util.getRandomString(10) + "@!!!.ru", util.getCorrectPassword());
         chromeDriver.findElement(By.className("alert-danger"));
         doLogin(firefoxDriver, "non-existent@!!!!.ru", util.getCorrectPassword());
         firefoxDriver.findElement(By.className("alert-danger"));
+    }
+
+    @Test
+    public void logOut() throws Exception {
+        doLogin(chromeDriver, util.getCorrectLogin(), util.getCorrectPassword());
+        doLogOut(chromeDriver);
+        doLogin(firefoxDriver, util.getCorrectLogin(), util.getCorrectPassword());
+        doLogOut(firefoxDriver);
     }
 }
