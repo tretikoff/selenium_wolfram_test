@@ -32,45 +32,53 @@ public class CalculationTest {
         firefoxDriver.quit();
     }
 
-    private void checkEquation(WebDriver driver, String equation, String result) {
-        // equation
-//        driver.findElement(By.xpath("//div[contains(@id, 'root')]//section/form//input")).sendKeys(equation);
+    private void checkEquation(WebDriver driver, String equation, String result) throws InterruptedException {
+        checkEquation(driver, equation, result, null);
+    }
+
+    private void checkEquation(WebDriver driver, String equation, String result, String expectedEquation) throws InterruptedException {
+        if (expectedEquation == null) {
+            expectedEquation = equation;
+        }
+        // input equation
         driver.findElement(By.className("_3mX7MD-u")).sendKeys(equation);
-        // button
-        //        driver.findElement(By.xpath("//div[contains(@id, 'root')]//section/form//button")).click();
-//        driver.findElement(By.className("_2HkkNXzH")).click();
-//        util.tryClick(driver, By.className("_2HkkNXzH _1caL4O8E _3nvo6gir"));
+        // click send button
         util.tryClick(driver, By.xpath("//button[@class='_2HkkNXzH _1caL4O8E _3nvo6gir']"));
-        // equation
-//        String equationValue = driver.findElement(By.xpath("(/html/body/div[@id='root']//main//section[@tabindex='0']/div)[0]/img")).getAttribute("alt");
+        Thread.sleep(1000);
+        // check equation
         String equationValue = driver.findElement(By.xpath("(//img[@class='ZbCdqua6'])[1]")).getAttribute("alt");
-        Assert.assertEquals(equation, equationValue);
-        // result
-//        String resultValue = driver.findElement(By.xpath("(/html/body/div[@id='root']//main//section[@tabindex='0']/div)[1]/img")).getAttribute("alt");
+        Assert.assertEquals(expectedEquation, equationValue);
+        // check result
         String resultValue = driver.findElement(By.xpath("(//img[@class='ZbCdqua6'])[2]")).getAttribute("alt");
         Assert.assertTrue(resultValue.contains(result));
     }
 
     @Test
-    public void check2plus2() throws Exception {
+    public void check2plus2() throws InterruptedException {
         checkEquation(firefoxDriver, "2 + 2", "4");
         checkEquation(chromeDriver, "2 + 2", "4");
     }
 
     @Test
-    public void CheckLongExpression() throws Exception {
+    public void checkMismatchedParentheses() throws InterruptedException {
+        checkEquation(firefoxDriver, "(2 + 2 * 2(", "6", "2 + 2×2");
+        checkEquation(chromeDriver, "(2 + 2 * 2(", "6", "2 + 2×2");
+    }
+
+    @Test
+    public void CheckLongExpression() throws InterruptedException {
         checkEquation(chromeDriver, "(1/19 (315×6 + 2×5))×0.01", "1");
         checkEquation(firefoxDriver, "(1/19 (315×6 + 2×5))×0.01", "1");
     }
 
     @Test
-    public void CheckBase16() throws Exception {
+    public void CheckBase16() throws InterruptedException {
         checkEquation(chromeDriver, "convert 15 to base16", "f_16");
         checkEquation(firefoxDriver, "convert 15 to base16", "f_16");
     }
 
     @Test
-    public void CheckCaloricValue() throws Exception {
+    public void CheckCaloricValue() throws InterruptedException {
         checkEquation(chromeDriver, "peanut butter | amount | 10 grams", "mass | 10 grams");
         checkEquation(firefoxDriver, "peanut butter | amount | 10 grams", "mass | 10 grams");
     }

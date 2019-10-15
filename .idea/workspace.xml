@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0744911f-8559-476f-b22c-205ca403ca73" name="Default Changelist" comment="Fix infinity value">
+    <list default="true" id="0744911f-8559-476f-b22c-205ca403ca73" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/lab/AuthorizationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lab/AuthorizationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/lab/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lab/Util.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/lab/AuthorizationTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/lab/AuthorizationTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/lab/Util.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/lab/Util.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/lab/CalculationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lab/CalculationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/lab/CalculationTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/lab/CalculationTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -87,7 +85,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.AuthorizationTest.logOut">
+  <component name="RunManager" selected="JUnit.CalculationTest.checkMismatchedParentheses">
     <configuration name="AuthorizationTest.failedRegister" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TestPO" />
       <extension name="coverage">
@@ -115,22 +113,6 @@
       <option name="PACKAGE_NAME" value="lab" />
       <option name="MAIN_CLASS_NAME" value="lab.AuthorizationTest" />
       <option name="METHOD_NAME" value="logOut" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AuthorizationTest.successfulRegister" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="TestPO" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="lab.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="lab" />
-      <option name="MAIN_CLASS_NAME" value="lab.AuthorizationTest" />
-      <option name="METHOD_NAME" value="successfulRegister" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -168,13 +150,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CalculationTest.checkMismatchedParentheses" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TestPO" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="lab.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="lab" />
+      <option name="MAIN_CLASS_NAME" value="lab.CalculationTest" />
+      <option name="METHOD_NAME" value="checkMismatchedParentheses" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CalculationTest.checkMismatchedParentheses" />
         <item itemvalue="JUnit.AuthorizationTest.logOut" />
         <item itemvalue="JUnit.AuthorizationTest.wrongEmailLogin" />
         <item itemvalue="JUnit.AuthorizationTest.failedRegister" />
         <item itemvalue="JUnit.AuthorizationTest.wrongPasswordLogin" />
-        <item itemvalue="JUnit.AuthorizationTest.successfulRegister" />
       </list>
     </recent_temporary>
   </component>
@@ -198,7 +196,7 @@
       <workItem from="1570558358657" duration="11548000" />
       <workItem from="1570621463139" duration="243000" />
       <workItem from="1571119740872" duration="11692000" />
-      <workItem from="1571153139586" duration="10903000" />
+      <workItem from="1571153139586" duration="12029000" />
     </task>
     <task id="LOCAL-00001" summary="WIP:">
       <created>1570551265332</created>
@@ -228,7 +226,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570554694614</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Add log out test, refactor">
+      <created>1571165524853</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1571165524853</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -250,7 +255,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="WIP:" />
     <MESSAGE value="Fix infinity value" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix infinity value" />
+    <MESSAGE value="Add log out test, refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add log out test, refactor" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
