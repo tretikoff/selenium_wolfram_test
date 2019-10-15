@@ -1,9 +1,12 @@
 package lab;
 
+import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.concurrent.TimeUnit;
 
@@ -11,167 +14,80 @@ import static org.junit.Assert.assertEquals;
 
 public class AuthorizationTest {
     private Util util;
-
-    private void doSuccessfulLogin(WebDriver driver) {
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        util.prepare(driver);
-        util.auth(driver, util.getCorrectLogin(), util.getCorrectPassword());
-
-        doLogin(driver, "pukoh@mail.ru", "8FBN7j3Jh,fmk3Q");
-//        driver.findElement(By.cssSelector(".\\_1MOABRzM > span > span")).click();
-
-//        util.tryClick(driver, By.xpath("//button[contains(@class, 'js-top-nav-sub')]"));
-//        driver.findElement(By.linkText("Выход")).click();
-        driver.quit();
-    }
-
-    private void doLogin(WebDriver driver, String email, String password) {
-        util.tryClick(driver, By.xpath("//header//nav//button//span[text()='Sign in']/../.."));
-
-        driver.findElement(By.id("create-account")).click();
-        driver.findElement(By.id("email")).click();
-        driver.findElement(By.id("email")).sendKeys(email);
-        driver.findElement(By.id("first-name")).click();
-        driver.findElement(By.id("firstName")).click();
-        driver.findElement(By.id("firstName")).sendKeys("Konstantin");
-        driver.findElement(By.id("lastName")).sendKeys("Tretyakov");
-        driver.findElement(By.id("password")).sendKeys(password);
-        driver.findElement(By.id("passwordConfirm")).sendKeys("8FBN7j3Jh,fmk3Q");
-        driver.findElement(By.id("accountAgreement1")).click();
-        driver.findElement(By.id("create-id-btn")).click();
-    }
-
-//    private void register(WebDriver driver) {
-//        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-//        util.prepare(driver);
-//        util.auth(driver, util.getCorrectLogin(), util.getCorrectPassword());
-//
-////        WebDriverWait wait = new WebDriverWait(driver, 10);
-////        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[contains(@class, 'js-top-nav-sub')]")));
-////        util.tryClick(driver, By.xpath("//button[contains(@class, 'js-top-nav-sub')]"));
-////        driver.findElement(By.linkText("Выход")).click();
-////        driver.quit();
-//
-//        driver.manage().window().setSize(new Dimension(974, 1040));
-//        driver.findElement(By.cssSelector(".\\_1MOABRzM > span > span")).click();
-//        driver.findElement(By.id("create-account")).click();
-//        driver.findElement(By.id("email")).sendKeys("asdg" + "@mailinator.com");
-//        driver.findElement(By.id("firstName")).sendKeys("asdg");
-//        driver.findElement(By.id("lastName")).sendKeys("asdg");
-//        driver.findElement(By.id("password")).sendKeys("8FBN7j3Jh,fmk3Q");
-//        driver.findElement(By.id("passwordConfirm")).sendKeys("8FBN7j3Jh,fmk3Q");
-//        driver.findElement(By.id("accountAgreement1")).click();
-//        driver.findElement(By.id("create-id-btn")).click();
-//    }
-
-    private void doWrongLogin(WebDriver driver) {
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        util.prepare(driver);
-        util.auth(driver, util.getCorrectLogin(), "asdasdasd");
-        assertEquals(true, util.isElementPresent(driver, By.cssSelector("span.field-validation-error")));
-        driver.quit();
-    }
+    private ChromeDriver chromeDriver;
+    private FirefoxDriver firefoxDriver;
 
     @Before
     public void setUp() throws Exception {
         util = new Util();
-    }
-
-    @Test
-    public void successfulLogin() throws Exception {
-//        doSuccessfulLogin(new FirefoxDriver());
-        doSuccessfulLogin(new ChromeDriver());
-    }
-
-    @Test
-    public void wrongPassword() throws Exception {
-//        doWrongLogin(new FirefoxDriver());
-        doWrongLogin(new ChromeDriver());
-    }
-
-    /*
-    * package lab;
-
-import org.junit.Test;
-import org.junit.Before;
-import org.junit.After;
-
-import static org.junit.Assert.*;
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.core.IsNot.not;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.JavascriptExecutor;
-
-import java.util.*;
-
-public class AuthorizationTest {
-    private WebDriver driver;
-    private Util util = new Util();
-
-    @Before
-    public void setUp() {
-        driver = new ChromeDriver();
-        util.prepare(driver);
+        chromeDriver = new ChromeDriver();
+        util.prepare(chromeDriver);
+        firefoxDriver = new FirefoxDriver();
+        util.prepare(firefoxDriver);
     }
 
     @After
     public void tearDown() {
-        driver.quit();
+        chromeDriver.quit();
+        firefoxDriver.quit();
+    }
+
+    private void doRegister(WebDriver driver, String email, String password) {
+        util.tryClick(driver, By.xpath("//button[@class='_2HkkNXzH _1MOABRzM gWLqKuPt']"));
+        util.tryClick(driver, By.xpath("//a[@href='create']"));
+        driver.findElement(By.xpath("//input[@name='email']")).sendKeys(email);
+        driver.findElement(By.xpath("//input[@name='firstName']")).sendKeys("Firstname");
+        driver.findElement(By.xpath("//input[@name='lastName']")).sendKeys("Lastname");
+        driver.findElement(By.xpath("//input[@name='password']")).sendKeys(password);
+        driver.findElement(By.xpath("//input[@name='passwordConfirm']")).sendKeys(password);
+
+        driver.findElement(By.className("agreement_checkbox")).sendKeys(password);
+        util.tryClick(driver, By.xpath("//button[@type='submit']"));
+    }
+
+    private void doLogin(WebDriver driver, String email, String password) throws InterruptedException {
+        util.tryClick(driver, By.xpath("//button[@class='_2HkkNXzH _1MOABRzM gWLqKuPt']"));
+        driver.findElement(By.xpath("//input[@class='form-control'][@path='email']")).sendKeys(email);
+        driver.findElement(By.xpath("//input[@class='form-control'][@path='password']")).sendKeys(password);
+        util.tryClick(driver, By.xpath("//button[@type='submit']"));
     }
 
     @Test
-    public void registration() {
-        driver.get("https://www.wolframalpha.com/");
-        driver.manage().window().setSize(new Dimension(974, 1040));
-        driver.findElement(By.cssSelector(".\\_1MOABRzM > span > span")).click();
-        driver.findElement(By.id("create-account")).click();
-//        driver.findElement(By.id("email")).click();
-        driver.findElement(By.id("email")).sendKeys("asdg" + "@mailinator.com");
-//        driver.findElement(By.id("first-name")).click();
-//        driver.findElement(By.id("firstName")).click();
-        driver.findElement(By.id("firstName")).sendKeys("asdg");
-        driver.findElement(By.id("lastName")).sendKeys("asdg");
-        driver.findElement(By.id("password")).sendKeys("8FBN7j3Jh,fmk3Q");
-        driver.findElement(By.id("passwordConfirm")).sendKeys("8FBN7j3Jh,fmk3Q");
-        driver.findElement(By.id("accountAgreement1")).click();
-        driver.findElement(By.id("create-id-btn")).click();
+    public void successfulLogin() throws Exception {
+        doLogin(chromeDriver, util.getCorrectLogin(), util.getCorrectPassword());
+        util.waitPresent(chromeDriver, By.className("_3ci9dP6l"));
+
+        doLogin(firefoxDriver, util.getCorrectLogin(), util.getCorrectPassword());
+        util.waitPresent(firefoxDriver, By.className("_3ci9dP6l"));
     }
 
     @Test
-    public void login() {
-        driver.get("https://www.wolframalpha.com/");
-        driver.manage().window().setSize(new Dimension(974, 1040));
-        driver.findElement(By.cssSelector(".\\_1MOABRzM > span > span")).click();
-        driver.findElement(By.id("create-account")).click();
-        driver.findElement(By.id("email")).click();
-        driver.findElement(By.id("email")).sendKeys("pukoh@mail.ru");
-        driver.findElement(By.id("first-name")).click();
-        driver.findElement(By.id("firstName")).click();
-        driver.findElement(By.id("firstName")).sendKeys("Konstantin");
-        driver.findElement(By.id("lastName")).sendKeys("Tretyakov");
-        driver.findElement(By.id("password")).sendKeys("8FBN7j3Jh,fmk3Q");
-        driver.findElement(By.id("passwordConfirm")).sendKeys("8FBN7j3Jh,fmk3Q");
-        driver.findElement(By.id("accountAgreement1")).click();
-        driver.findElement(By.id("create-id-btn")).click();
+    public void successfulRegister() {
+        doRegister(chromeDriver, util.getRandomString(10) + "@mail.ru", util.getCorrectPassword());
+        doRegister(firefoxDriver, util.getRandomString(10) + "@mail.ru", util.getCorrectPassword());
     }
 
     @Test
-    public void logout() {
-        driver.get("https://www.wolframalpha.com/");
-        driver.manage().window().setSize(new Dimension(974, 1040));
-        driver.findElement(By.cssSelector(".\\_1MOABRzM > span > span")).click();
-        driver.findElement(By.name("j_username")).sendKeys("pukoh@mail.ru");
-        driver.findElement(By.name("j_password")).sendKeys("8FBN7j3Jh,fmk3Q");
-        driver.findElement(By.id("sign-in-btn")).click();
-        driver.findElement(By.cssSelector(".gWfHfTZi > .\\_3ci9dP6l")).click();
-        driver.findElement(By.cssSelector(".\\_3ezZZ_kp:nth-child(9) > .\\_2HkkNXzH")).click();
-        driver.close();
+    public void failedRegister() {
+        doRegister(chromeDriver, util.getRandomString(10) + "@!!!!.ru", util.getCorrectPassword());
+        chromeDriver.findElement(By.className("alert-danger"));
+        doRegister(firefoxDriver, util.getRandomString(10) + "@!!!!.ru", util.getCorrectPassword());
+        chromeDriver.findElement(By.className("alert-danger"));
     }
-}
-*/
+
+    @Test
+    public void wrongPasswordLogin() throws Exception {
+        doRegister(chromeDriver, util.getCorrectLogin(), "wrong_password");
+        chromeDriver.findElement(By.className("alert-danger"));
+        doRegister(firefoxDriver, util.getCorrectLogin(), "wrong_password");
+        firefoxDriver.findElement(By.className("alert-danger"));
+    }
+
+    @Test
+    public void wrongEmailLogin() throws Exception {
+        doLogin(chromeDriver, util.getRandomString(10) + "@!!!.ru", util.getCorrectPassword());
+        chromeDriver.findElement(By.className("alert-danger"));
+        doLogin(firefoxDriver, "non-existent@!!!!.ru", util.getCorrectPassword());
+        firefoxDriver.findElement(By.className("alert-danger"));
+    }
 }

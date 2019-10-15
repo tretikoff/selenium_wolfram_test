@@ -52,20 +52,13 @@ class Util {
         element.sendKeys(Keys.ENTER);
     }
 
-    void auth(WebDriver driver, String login, String password) {
-
-        String loginPath = "input[name=login].c-top-loginform__input";
-        String passwordPath = "input[name=password].c-top-loginform__input";
-        driver.findElement(By.xpath("//button[@onclick=\"yaCounter.reachGoal('login_from_top_by_email'); return true;\"]")).click();
-        driver.findElement(By.cssSelector(loginPath)).clear();
-        driver.findElement(By.cssSelector(loginPath)).sendKeys(login);
-        driver.findElement(By.cssSelector(passwordPath));
-        driver.findElement(By.cssSelector(passwordPath)).sendKeys(password);
-        driver.findElement(By.xpath("(//button[@type='submit'])[4]")).click();
+    void waitPresent(WebDriver driver, By selector) {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(selector));
     }
 
-    String getRandomString() {
-        byte[] array = new byte[7];
+    String getRandomString(int length) {
+        byte[] array = new byte[length];
         new Random().nextBytes(array);
         return new String(array, StandardCharsets.UTF_8);
     }
