@@ -1,28 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0744911f-8559-476f-b22c-205ca403ca73" name="Default Changelist" comment="">
+    <list default="true" id="0744911f-8559-476f-b22c-205ca403ca73" name="Default Changelist" comment="Fix infinity value">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_findbugs_jsr305_1_3_9.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_errorprone_error_prone_annotations_2_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_j2objc_j2objc_annotations_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okhttp3_okhttp_3_11_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okio_okio_1_14_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_8_15.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_checkerframework_checker_compat_qual_2_0_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_mojo_animal_sniffer_annotations_1_14.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/TestPO.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TestPO.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__cglib_cglib_nodep_3_2_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_beust_jcommander_1_48.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_beust_jcommander_1_72.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_codeborne_phantomjsdriver_1_4_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_8_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_21_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_25_0_jre.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_10.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_java_dev_jna_jna_4_1_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_java_dev_jna_jna_platform_4_1_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_sourceforge_cssparser_cssparser_0_9_21.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_sourceforge_htmlunit_htmlunit_2_24.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_sourceforge_htmlunit_htmlunit_core_js_2_23.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_sourceforge_htmlunit_neko_htmlunit_2_24.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_5_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpmime_4_5_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_io_9_2_20_v20161216.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_util_9_2_20_v20161216.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_websocket_websocket_api_9_2_20_v20161216.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_websocket_websocket_client_9_2_20_v20161216.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_websocket_websocket_common_9_2_20_v20161216.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_library_1_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_htmlunit_driver_2_24.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_api_3_141_59.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_jetty_repacked_9_4_1_v20170120.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_jetty_repacked_9_4_12_v20180830.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_api_3_3_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_chrome_driver_3_3_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_chrome_driver_3_141_59.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_edge_driver_3_3_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_edge_driver_3_141_59.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_firefox_driver_3_3_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_firefox_driver_3_141_59.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_ie_driver_3_3_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_ie_driver_3_141_59.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_java_3_3_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_java_3_141_59.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_opera_driver_3_3_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_opera_driver_3_141_59.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_remote_driver_3_3_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_remote_driver_3_141_59.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_safari_driver_3_3_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_safari_driver_3_141_59.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_server_3_3_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_server_3_141_59.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_support_3_3_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_support_3_141_59.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_w3c_css_sac_1_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_15.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_19.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__xalan_serializer_2_7_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__xalan_xalan_2_7_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__xerces_xercesImpl_2_11_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__xml_apis_xml_apis_1_4_01.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/production/TestPO/lab/util/CSVWriter.class" beforeDir="false" afterPath="$PROJECT_DIR$/output/production/TestPO/lab/util/CSVWriter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/test/TestPO/lab/FunctionSystemEightTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/test/TestPO/lab/FunctionSystemFiveTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/test/TestPO/lab/FunctionSystemFourTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/test/TestPO/lab/FunctionSystemOneTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/test/TestPO/lab/FunctionSystemSevenTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/test/TestPO/lab/FunctionSystemSixTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/test/TestPO/lab/FunctionSystemThreeTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/test/TestPO/lab/FunctionSystemTwoTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lab/trigonometric/Cosecant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab/trigonometric/Cosecant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lab/util/CSVWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab/util/CSVWriter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/lab/FunctionSystemEightTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/lab/FunctionSystemFiveTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/lab/FunctionSystemFourTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/lab/FunctionSystemOneTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/lab/FunctionSystemSevenTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/lab/FunctionSystemSixTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/lab/FunctionSystemThreeTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/lab/FunctionSystemTwoTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/lab/trigonometric/TestTrigSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lab/trigonometric/TestTrigSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/SeleniumTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/lab/AuthorizationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lab/AuthorizationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/lab/BlogTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/lab/CalculationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lab/CalculationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/lab/CarCatalogTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/lab/CommunitiesTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/lab/ExperienceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/lab/FeedTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/lab/MarketTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/lab/SearchTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/lab/AuthorizationTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/lab/AuthorizationTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/lab/BlogTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/lab/CarCatalogTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/lab/CommunitiesTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/lab/ExperienceTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/lab/FeedTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/lab/MarketTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/lab/SearchTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/lab/Util.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/lab/Util.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -52,7 +104,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../TestPO2.2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -72,22 +124,23 @@
       <recent name="D:\TestPO\src" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="lab.logarithmic" />
       <recent name="lab" />
+      <recent name="" />
+      <recent name="lab.logarithmic" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="lab.trigonometric" />
+      <recent name="lab.old" />
       <recent name="lab" />
+      <recent name="lab.trigonometric" />
       <recent name="lab.logarithmic" />
       <recent name="src" />
-      <recent name="src.RBTree" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\TestPO3" />
       <recent name="D:\TestPO2\src\test\java\lab\trigonometric" />
       <recent name="D:\TestPO2\src\test\java\lab\logarithmic" />
       <recent name="D:\TestPO2\src\test\java\lab" />
       <recent name="D:\TestPO2\src\main\java\lab" />
-      <recent name="D:\TestPO2\src\test\java\lab\util" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -102,79 +155,82 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TestTrigSystem.TestFunction">
-    <configuration name="FunctionTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.CalculationTest.CheckLongExpression">
+    <configuration name="CalculationTest.CheckBase16" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TestPO" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="lab.trigonometric.*" />
+          <option name="PATTERN" value="lab.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="lab.trigonometric" />
-      <option name="MAIN_CLASS_NAME" value="lab.trigonometric.FunctionTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestLogSystem" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="TestPO" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="lab.logarithmic.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="lab.logarithmic" />
-      <option name="MAIN_CLASS_NAME" value="lab.logarithmic.TestLogSystem" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestLogSystem.TestFunction" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="TestPO" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="lab.logarithmic.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="lab.logarithmic" />
-      <option name="MAIN_CLASS_NAME" value="lab.logarithmic.TestLogSystem" />
-      <option name="METHOD_NAME" value="TestFunction" />
+      <option name="PACKAGE_NAME" value="lab" />
+      <option name="MAIN_CLASS_NAME" value="lab.CalculationTest" />
+      <option name="METHOD_NAME" value="CheckBase16" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestTrigSystem" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CalculationTest.CheckCaloricValue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TestPO" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="lab.trigonometric.*" />
+          <option name="PATTERN" value="lab.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="lab.trigonometric" />
-      <option name="MAIN_CLASS_NAME" value="lab.trigonometric.TestTrigSystem" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="lab" />
+      <option name="MAIN_CLASS_NAME" value="lab.CalculationTest" />
+      <option name="METHOD_NAME" value="CheckCaloricValue" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestTrigSystem.TestFunction" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CalculationTest.CheckLongExpression" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TestPO" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="lab.trigonometric.*" />
+          <option name="PATTERN" value="lab.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="lab.trigonometric" />
-      <option name="MAIN_CLASS_NAME" value="lab.trigonometric.TestTrigSystem" />
-      <option name="METHOD_NAME" value="TestFunction" />
+      <option name="PACKAGE_NAME" value="lab" />
+      <option name="MAIN_CLASS_NAME" value="lab.CalculationTest" />
+      <option name="METHOD_NAME" value="CheckLongExpression" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CalculationTest.check2plus2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TestPO" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="lab.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="lab" />
+      <option name="MAIN_CLASS_NAME" value="lab.CalculationTest" />
+      <option name="METHOD_NAME" value="check2plus2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FeedTest.viewFeed" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TestPO" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="lab.old.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="lab.old" />
+      <option name="MAIN_CLASS_NAME" value="lab.old.FeedTest" />
+      <option name="METHOD_NAME" value="viewFeed" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -182,11 +238,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestTrigSystem.TestFunction" />
-        <item itemvalue="JUnit.TestTrigSystem" />
-        <item itemvalue="JUnit.TestLogSystem" />
-        <item itemvalue="JUnit.TestLogSystem.TestFunction" />
-        <item itemvalue="JUnit.FunctionTest (1)" />
+        <item itemvalue="JUnit.CalculationTest.CheckLongExpression" />
+        <item itemvalue="JUnit.CalculationTest.CheckCaloricValue" />
+        <item itemvalue="JUnit.CalculationTest.CheckBase16" />
+        <item itemvalue="JUnit.CalculationTest.check2plus2" />
+        <item itemvalue="JUnit.FeedTest.viewFeed" />
       </list>
     </recent_temporary>
   </component>
@@ -206,7 +262,11 @@
       <workItem from="1569341910656" duration="2837000" />
       <workItem from="1569348552754" duration="3211000" />
       <workItem from="1570534633574" duration="324000" />
-      <workItem from="1570535694535" duration="14432000" />
+      <workItem from="1570535694535" duration="15351000" />
+      <workItem from="1570558358657" duration="11548000" />
+      <workItem from="1570621463139" duration="243000" />
+      <workItem from="1571119740872" duration="11692000" />
+      <workItem from="1571153139586" duration="2322000" />
     </task>
     <task id="LOCAL-00001" summary="WIP:">
       <created>1570551265332</created>
@@ -222,7 +282,21 @@
       <option name="project" value="LOCAL" />
       <updated>1570553001000</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="WIP:">
+      <created>1570554608389</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1570554608389</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Fix infinity value">
+      <created>1570554694614</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1570554694614</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -243,7 +317,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="WIP:" />
-    <option name="LAST_COMMIT_MESSAGE" value="WIP:" />
+    <MESSAGE value="Fix infinity value" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix infinity value" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
